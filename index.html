@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinky Cuties | Luxury Handcrafted Jewelry - Bangles, Pearls & Beaded Jewelry</title>
+    <meta name="description" content="Discover Pinky Cuties' exquisite handcrafted jewelry collection featuring premium bangles, pearl pieces, bead bracelets and necklaces. Luxury accessories crafted with care.">
+    <meta name="keywords" content="luxury jewelry, handcrafted bangles, pearl jewelry, beaded bracelets, designer necklaces">
+    <meta property="og:title" content="Pinky Cuties | Luxury Handcrafted Jewelry">
+    <meta property="og:description" content="Exquisite handcrafted jewelry collections for the discerning woman">
+    <meta property="og:image" content="https://pinkycuties.com/images/social-share.jpg">
+    <meta property="og:url" content="https://pinkycuties.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://pinkycuties.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Preload hero image -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" as="image">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Inline critical CSS -->
+    <style>
+         </style>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    
+    <!-- Preload JavaScript -->
+    <link rel="preload" href="https://code.jquery.com/jquery-3.6.0.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" as="script">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Pinky Cuties Home">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDBDOC45NTQgMCAwIDguOTU0IDAgMjBzOC45NTQgMjAgMjAgMjAgMjAtOC45NTQgMjAtMjBTMzEuMDQ2IDAgMjAgMHptMCAzNEMxMS4xNjMgMzQgNCAyNi44MzcgNCAxOFMxMS4xNjMgMiAyMCAyczE2IDcuMTYzIDE2IDE2LTcuMTYzIDE2LTE2IDE2eiIgZmlsbD0iI2Q0YWYzNyIvPgo8cGF0aCBkPSJNMjYgMTVoLTJ2LTJoMnYyem0tNiAwaC0ydi0yaDJ2MnptLTYgMGgtMnYtMmgydjJ6IiBmaWxsPSIjZDJhOTM1Ii8+Cjwvc3ZnPg==" alt="Pinky Cuties Logo" width="40" height="40" loading="lazy">
+                Pinky <span>Cuties</span>
+            </a>
+            
+            <nav id="nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-icons">
+                <a href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="#" aria-label="Account"><i class="fas fa-user"></i></a>
+                <a href="#" id="cart-icon" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Cart</h3>
+            <button class="close-cart" id="close-cart" aria-label="Close cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <div class="empty-cart">
+                <p>Your cart is currently empty.</p>
+            </div>
+        </div>
+        
+        <div class="cart-total">
+            <div class="total-row">
+                <span class="total-title">Subtotal:</span>
+                <span class="total-price" id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="total-row">
+                <span class="total-title">Shipping:</span>
+                <span class="total-price">Calculated at checkout</span>
+            </div>
+            <div class="total-row">
+                <span class="total-title">Total:</span>
+                <span class="total-price" id="cart-total">$0.00</span>
+            </div>
+        </div>
+        
+        <div class="cart-btns">
+            <a href="#" class="btn">Continue to Checkout</a>
+            <a href="#" class="btn btn-outline">View Cart</a>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Handcrafted Elegance for the Discerning Woman</h1>
+                <p>Discover our exquisite collection of luxury bangles, pearl pieces, and bead jewelry, meticulously crafted from premium materials.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn">Shop Now</a>
+                    <a href="#collections" class="btn btn-outline">View Collections</a>
+                </div>
+            </div>
+        </div>
+        <a href="#collections" class="hero-scroll fade-in delay-1" aria-label="Scroll down">
+            Explore More
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="badges-container">
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="badge-text">
+                        Premium Quality Materials
+                    </div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="badge-text">
+                        Free Shipping Over $100
+                    </div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="badge-text">
+                        30-Day Returns
+                    </div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="badge-text">
+                        Handcrafted with Love
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section categories" id="collections">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Collections</h2>
+            <p class="section-subtitle fade-in delay-1">Explore our carefully curated jewelry collections, each piece telling its own story of craftsmanship and beauty.</p>
+            
+            <div class="categories-grid">
+                <div class="category-card fade-in delay-1">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIzNTAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsiPjwvc3ZnPg==" data-src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Bangles Collection" class="category-img lazy" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Bangles</h3>
+                        <p>Timeless elegance for every wrist</p>
+                        <a href="#" class="btn btn-outline">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Other category cards with lazy loading -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section" id="shop">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Pieces</h2>
+            <p class="section-subtitle fade-in delay-1">Our most loved jewelry pieces, handpicked for you.</p>
+            
+            <div class="products-slider">
+                <div class="products-grid">
+                    <article class="product-card fade-in delay-1">
+                        <span class="product-badge">Bestseller</span>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIzMDAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsiPjwvc3ZnPg==" data-src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pearl Elegance Bracelet" class="product-img lazy" loading="lazy">
+                        <div class="product-info">
+                            <h3 class="product-title">Pearl Elegance Bracelet</h3>
+                            <div class="product-price">
+                                <div>
+                                    <span class="old-price">$89.99</span>
+                                    <span class="price">$69.99</span>
+                                </div>
+                                <button class="add-to-cart" data-product-id="1" aria-label="Add to cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Other product cards with lazy loading -->
+                </div>
+            </div>
+            
+            <div class="text-center fade-in delay-3" style="margin-top: 50px;">
+                <a href="#" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craftsmanship Section -->
+    <section class="section craftsmanship" id="about">
+        <div class="container craftsmanship-container">
+            <div class="craftsmanship-img fade-in">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI1MDAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsiPjwvc3ZnPg==" data-src="https://images.unsplash.com/photo-1605106715994-18d3fecffb98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Pinky Cuties Craftsmanship" class="lazy" loading="lazy">
+            </div>
+            
+            <div class="craftsmanship-content fade-in delay-1">
+                <h2>The Art of Handcrafted Luxury</h2>
+                <p>At Pinky Cuties, we believe jewelry should be as unique as the woman who wears it. Each piece in our collection is meticulously crafted by skilled artisans using only the finest premium plastic and luxurious beads.</p>
+                <p>Our process combines traditional techniques with contemporary design, resulting in jewelry that stands the test of time while making a modern statement.</p>
+                
+                <div class="craftsmanship-stats">
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>Designs Created</p>
+                    </div>
+                    <!-- Other stats -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="section instagram-feed" id="instagram">
+        <div class="container">
+            <div class="instagram-header">
+                <h3 class="instagram-title">Follow us on Instagram</h3>
+                <a href="https://www.instagram.com/pinkycuties" target="_blank" rel="noopener noreferrer" class="instagram-username">@pinkycuties</a>
+            </div>
+            
+            <div class="instagram-posts">
+                <div class="instagram-post">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIyNTAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsiPjwvc3ZnPg==" data-src="https://images.unsplash.com/photo-1603974372035-9e4b7f70a00d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Instagram Post" class="lazy" loading="lazy">
+                    <div class="instagram-overlay">
+                        <a href="https://www.instagram.com/p/CxYzABCDeFg" target="_blank" rel="noopener noreferrer" class="instagram-icon" aria-label="View on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Other Instagram posts with lazy loading -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Clients Say</h2>
+            <p class="section-subtitle fade-in delay-1">Don't just take our word for it - hear from our satisfied customers.</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card fade-in delay-1">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNlOGViZWI7Ym9yZGVyLXJhZGl1czo1MCU7Ij48L3N2Zz4=" data-src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="testimonial-img lazy" loading="lazy">
+                    <p class="testimonial-text">"The Pearl Elegance Bracelet is absolutely stunning! I've received so many compliments and the quality is exceptional for the price."</p>
+                    <h4 class="testimonial-author">Sarah J.</h4>
+                    <p class="testimonial-role">Fashion Blogger</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Other testimonials with lazy loading -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title fade-in">Jewelry Journal</h2>
+            <p class="section-subtitle fade-in delay-1">Discover styling tips, trends, and behind-the-scenes stories from our artisans.</p>
+            
+            <div class="blog-posts">
+                <article class="blog-card fade-in delay-1">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIyMDAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsiPjwvc3ZnPg==" data-src="https://images.unsplash.com/photo-1605100945271-8a5e87471a9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Blog Post" class="blog-img lazy" loading="lazy">
+                    <div class="blog-content">
+                        <time datetime="2023-06-15" class="blog-date">June 15, 2023</time>
+                        <h3 class="blog-title">How to Layer Your Bangles Like a Fashion Pro</h3>
+                        <p class="blog-excerpt">Learn the art of bangle stacking with our expert tips to create the perfect layered look for any occasion...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Other blog posts with lazy loading -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+        <div class="container">
+            <h2 class="section-title fade-in">Join Our World of Elegance</h2>
+            <p class="section-subtitle fade-in delay-1">Be the first to access new collections, exclusive offers, and styling tips.</p>
+            
+            <form class="newsletter-form fade-in delay-2" id="newsletter-form" novalidate>
+                <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email address">
+                <button type="submit" class="newsletter-btn" id="newsletter-btn">
+                    <span class="btn-text">Subscribe</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+            </form>
+            
+            <p class="text-center fade-in delay-3" style="margin-top: 20px; opacity: 0.7; font-size: 14px;">
+                We respect your privacy. Unsubscribe at any time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Pinky <span>Cuties</span></a>
+                    <p>Handcrafted luxury jewelry for the modern woman. Each piece tells a story of craftsmanship, elegance, and individuality.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/pinkycuties" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/pinkycuties" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com/pinkycuties" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.twitter.com/pinkycuties" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@pinkycuties" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Other footer sections -->
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Pinky Cuties. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+    <!-- Product Quick View Modal -->
+    <div class="quickview-overlay" id="quickview-overlay" aria-hidden="true"></div>
+    <dialog class="quickview-modal" id="quickview-modal" aria-labelledby="quickview-title">
+        <button class="close-quickview" id="close-quickview" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="quickview-content">
+            <div class="quickview-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI1MDAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsiPjwvc3ZnPg==" data-src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pearl Elegance Bracelet" class="lazy" loading="lazy">
+            </div>
+            <div class="quickview-details">
+                <h2 id="quickview-title" class="quickview-title">Pearl Elegance Bracelet</h2>
+                <!-- Other quickview content -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Deferred JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+    
+    <!-- Inline critical JavaScript -->
+   
+         <script src="js/main.js"></script>
+         </script>
+</body>
+</html>
