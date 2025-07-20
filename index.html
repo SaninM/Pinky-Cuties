@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pinky Cuties | Luxury African Bead Jewelry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+         </style>
+</head>
+<body>
+   
+    
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="main-header">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <a href="index.html" class="logo">
+                    <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4be7191274c2460f857ba39f8cd712bb~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=30b89f42&x-expires=1753192800&x-signature=pMPND69ZdDhtuvcU1om73JhI2KI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Pinky Cuties Logo">
+                    Pinky <span>Cuties</span>
+                </a>
+                
+                <nav id="mainNav">
+                    <button class="close-menu" id="closeMenu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+
+                        <li>
+                         <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" target="_blank" rel="noopener" title="Read our blog for styling tips, beadwork stories, and customer highlights.">Shop</a>
+        </li>
+                       
+                        <li>
+            <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" target="_blank" rel="noopener" title="Read our blog for styling tips, beadwork stories, and customer highlights.">Collection</a>
+        </li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                
+            </div>
+        </div>
+    </header>
+    
+  
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (3)</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <div class="cart-item">
+                <div class="cart-item-img">
+                    <img src="https://i.pinimg.com/1200x/e5/50/27/e550279b9a79ad54bdf6e4caef573efc.jpg" alt="Rainbow Bead Bracelet">
+                </div>
+                <div class="cart-item-details">
+                    <h4 class="cart-item-title">Mordern Bead Bracelet</h4>
+                    <div class="cart-item-price">Ksh 120.00</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="remove-item">Remove</button>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div class="cart-item-img">
+                    <img src="https://i.pinimg.com/1200x/6c/d9/d4/6cd9d4e3f1a282527d59a7b6944ecc79.jpg" alt="Traditional Necklace Set">
+                </div>
+                <div class="cart-item-details">
+                    <h4 class="cart-item-title"> Necklace Set</h4>
+                    <div class="cart-item-price">Ksh 100.00</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="remove-item">Remove</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cart-total">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span>Ksh 220.00</span>
+            </div>
+            <div class="cart-buttons">
+                <a href="cart.html" class="btn">View Cart</a>
+                <a href="checkout.html" class="btn btn-gold">Checkout</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="modal-header">
+            <h3>Quick View</h3>
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="modal-content">
+            <div class="modal-product-gallery">
+                <div class="modal-main-image">
+                    <img src="https://i.pinimg.com/1200x/e5/50/27/e550279b9a79ad54bdf6e4caef573efc.jpg" alt="Rainbow Bead Bracelet" id="mainProductImage">
+                </div>
+                <div class="modal-thumbnails">
+                    <div class="modal-thumbnail active" data-image="https://i.pinimg.com/1200x/e5/50/27/e550279b9a79ad54bdf6e4caef573efc.jpg">
+                        <img src="https://i.pinimg.com/1200x/27/98/75/279875cd1c75a377147b9e6d762b0638.jpg" alt="Thumbnail 1">
+                    </div>
+                    <div class="modal-thumbnail" data-image="https://i.pinimg.com/1200x/e5/50/27/e550279b9a79ad54bdf6e4caef573efc.jpg">
+                        <img src="https://i.pinimg.com/1200x/36/05/67/360567bbf8b18d3ef9dadd9d778284de.jpg" alt="Thumbnail 2">
+                    </div>
+                    <div class="modal-thumbnail" data-image="https://i.pinimg.com/1200x/e5/50/27/e550279b9a79ad54bdf6e4caef573efc.jpg">
+                        <img src="https://i.pinimg.com/1200x/3a/c7/15/3ac7159aebf959c9d0714244962a8953.jpg" alt="Thumbnail 3">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-product-info">
+                <h2>modern Bead Bracelet</h2>
+                <div class="modal-price">
+                    Ksh 120.00 <span class="old-price">KSH 150.00</span>
+                </div>
+                <div class="modal-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(12 reviews)</span>
+                </div>
+                <div class="modal-description">
+                    <p>This exquisite handmade bracelet features vibrant African plastic beads in a rainbow pattern, meticulously crafted by our artisans in Ghana. Each bead is carefully selected for its color and quality, then strung with premium nylon thread for durability and comfort.</p>
+                    <ul>
+                        <li>Handmade with authentic African beads sourced ethically</li>
+                        <li>Adjustable tie closure for a perfect, custom fit</li>
+                        <li>Water-resistant and durable for daily wear</li>
+                        <li>One size fits most wrists (adjustable from 6-8 inches)</li>
+                        <li>Presented in luxury gift packaging</li>
+                    </ul>
+                </div>
+                
+                <div class="quantity-selector">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn" id="addToCartModal">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="far fa-heart"></i> Add to Wishlist
+                    </button>
+                </div>
+                
+                <div class="modal-meta">
+                    <p><span>Category:</span> Bracelets</p>
+                    <p><span>Tags:</span> African, Beads, Colorful, Handmade, Luxury</p>
+                    <p><span>SKU:</span> PC-BR-001</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Couple Bracelets Hero Section -->
+    <section class="couple-hero" id="coupleBracelets">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div class="couple-content" style="flex: 1 1 400px; min-width: 300px;">
+                <h1 class="animate__animated animate__fadeInUp" style="font-size:100px; margin-bottom:40px;">
+                    PinkyCuties <span style="font-size:50px;">HandMade With Care,Designed to Last💕</span>
+                </h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s" style="font-size:1.5rem;">
+                    Our signature bracelet collection, handcrafted with love and authentic African beads. Each set is uniquely designed to symbolize your connection.
+                </p>
+                <div class="couple-btns animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn pulse">Shop Collection</a>
+                    <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn btn-outline">Customize Yours</a>
+                </div>
+            </div>
+            <!-- Portfolio Image of Pinkette (Owner) -->
+            <div class="owner-portfolio" style="flex: 0 0 350px; min-width: 350px; text-align: center; margin-top: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+                <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8a16cc390eafd4690d801322a407ce04~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=135088ac&x-expires=1753196400&x-signature=7yIcRHwOZM1dQIOAdny8eBH0w1w%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva"
+                     alt="Pinkette - Owner of Pinky Cuties"
+                     style="width:400px; height:400px; object-fit:cover; border-radius:50%; box-shadow:0 4px 24px rgba(255,105,180,0.15); border:10px solid #fff; margin-top:-240px;">
+                <div style="margin-top:10px;">
+                    <h3 style="margin:0; font-size:30px; color: deeppink;">Pinkette</h3>
+                    <p style="margin:0; font-size:30px; color:purple;">Founder &amp; Creative Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Collections</h2>
+                <p>Explore our exquisite handmade jewelry categories, each crafted with premium African beads and luxurious attention to detail.</p>
+            </div>
+            
+            <div class="categories">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://i.pinimg.com/1200x/e5/50/27/e550279b9a79ad54bdf6e4caef573efc.jpg" alt="Bracelets">
+                    </div>
+                    <div class="category-info">
+                        <h3>Bracelets</h3>
+                        <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://i.pinimg.com/1200x/6c/d9/d4/6cd9d4e3f1a282527d59a7b6944ecc79.jpg" alt="Necklaces">
+                    </div>
+                    <div class="category-info">
+                        <h3>Necklaces</h3>
+                        <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View Collection</a>
+                    </div>
+                </div>
+
+                    <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://i.pinimg.com/736x/ea/0e/ac/ea0eacc6fc5f75ea877fa00c9863c766.jpg" alt="Necklaces">
+                    </div>
+                    <div class="category-info">
+                        <h3>Pearls</h3>
+                        <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View Collection</a>
+                    </div>
+                </div>
+                    
+                    <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://i.pinimg.com/1200x/4b/28/63/4b2863cbd391ab6b59bc5800f6e45d76.jpg" alt="rings">
+                    </div>
+                    <div class="category-info">
+                        <h3>Rings</h3>
+                        <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://i.pinimg.com/1200x/2d/70/c2/2d70c288a4695b5a20a96883819a018f.jpg" alt="Bangles">
+                    </div>
+                    <div class="category-info">
+                        <h3>Bangles</h3>
+                        <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://i.pinimg.com/1200x/21/59/6b/21596b001d4a2f256f2eb2abf5f84981.jpg" alt="Waist Beads">
+                    </div>
+                    <div class="category-info">
+                        <h3>Waist Beads</h3>
+                        <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Our most coveted pieces, handpicked for their exceptional craftsmanship and luxurious appeal</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bracelets">Bracelets</button>
+                <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+                <button class="filter-btn" data-filter="bangles">Bangles</button>
+                <button class="filter-btn" data-filter="waist-beads">Waist Beads</button>
+                
+            </div>
+            
+            <div class="products">
+                <div class="product-card" data-category="bracelets">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/039a2b13dfbfa8351928af84efd4ebba~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=b0562717&x-expires=1753207200&x-signature=WZjUxEeHW0%2BErvFcO0fqCdwRsc4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="African Bead Bracelet">
+                        <div class="product-actions">
+                            <button class="quick-view" data-product="1">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="add-to-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Puple Bead Bracelet</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(12)</span>
+                        </div>
+                        <div class="price">Ksh 120.00</div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="necklaces">
+                    <div class="product-badge new">New</div>
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/736x/d3/fd/64/d3fd64f645307ed3dfce2fd2c8ae39a1.jpg" alt="African Bead Necklace">
+                        <div class="product-actions">
+                            <button class="quick-view" data-product="2">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="add-to-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Modern Necklace Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(8)</span>
+                        </div>
+                        <div class="price">Ksh 100.00</div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="necklaces">
+                    <div class="product-badge new">New</div>
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/736x/e6/08/34/e60834b4bf1823035c298b582c0369f1.jpg" alt="African Bead Necklace">
+                        <div class="product-actions">
+                            <button class="quick-view" data-product="2">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="add-to-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>luxury Necklace Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(8)</span>
+                        </div>
+                        <div class="price">Ksh 100.00</div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="necklaces">
+                    <div class="product-badge new">New</div>
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/736x/e4/c9/35/e4c935fc2484484d658e54b925e62521.jpg" alt="African Bead Necklace">
+                        <div class="product-actions">
+                            <button class="quick-view" data-product="2">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="add-to-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Best Choise Necklace Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(8)</span>
+                        </div>
+                        <div class="price">Ksh 100.00 </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bangles">
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/736x/e0/04/bb/e004bb13d47106823f749c88b06af360.jpg" alt="African Bead Bangles">
+                        <div class="product-actions">
+                            <button class="quick-view" data-product="3">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="add-to-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Stackable Bangles</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(25)</span>
+                        </div>
+                        <div class="price">Ksh 120.00</div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="waist-beads">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/1200x/fb/77/11/fb771155e614b096832fb9176aeb1010.jpg" alt="African Waist Beads">
+                        <div class="product-actions">
+                            <button class="quick-view" data-product="4">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="add-to-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Deluxe Waist Beads</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(18)</span>
+                        </div>
+                        <div class="price">
+                            <span class="old-price">Ksh 300.00</span> Ksh 250.00
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-container">
+                <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-img">
+                <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4be7191274c2460f857ba39f8cd712bb~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=30b89f42&x-expires=1753192800&x-signature=pMPND69ZdDhtuvcU1om73JhI2KI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="About Pinky Cuties">
+            </div>
+            
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>Pinky Cuties was born from a passion for African craftsmanship and a desire to elevate traditional beadwork into luxury wearable art. Each piece in our collection is meticulously handmade by skilled artisans using premium African plastic beads.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <h4>Ethically Sourced</h4>
+                            <p>We partner directly with artisan communities in Ghana, Nigeria, and Kenya, ensuring fair wages and sustainable practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h4>Luxury Quality</h4>
+                            <p>Each bead undergoes rigorous selection for colorfastness and durability, hand-strung with premium materials for longevity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div>
+                            <h4>Artisan Crafted</h4>
+                            <p>Every piece tells a story, blending traditional techniques with contemporary design for modern luxury.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="header-icons">
+                    
+                    <li></li>
+                <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" class="btn">Discover Our Craft</a>
+                <li>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Love</h2>
+                <p>Hear what our discerning clients say about their Pinky Cuties experience</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-text">
+                        My Pinky Cuties waist beads are absolute perfection! The craftsmanship is impeccable and they're so comfortable to wear. I receive compliments every time I wear them. The colors remain vibrant even after months of daily wear - truly exceptional quality.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/e0be00419f4f8d587b9519b9a567ad5b~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=451000a5&x-expires=1753203600&x-signature=Mq5by31FJFDlsinClXVHBHpEMJo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Sarah J.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sanin M</h4>
+                            <p>Verified Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-text">
+                        The couple bracelets we ordered exceeded all expectations. The attention to detail is remarkable, and the personalization option made them extra special. My partner and I wear them every day as a symbol of our connection. The customer service was equally impressive.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/1afae97bcb8bcad52895f110f9abc605~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14635&refresh_token=e5973efe&x-expires=1753203600&x-signature=dhVMAzuUt4tKTbEijkjuOsYgdkc%3D&t=4d5b0474&ps=82dc5187&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Michael T.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Lizz.</h4>
+                            <p>Verified Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-text">
+                        I've collected several Pinky Cuties necklaces, and each one is a masterpiece. The beads are perfectly uniform, the colors are rich and vibrant, and the craftsmanship is evident in every detail. The luxurious packaging makes them perfect for gifting as well.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amina K.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rael.</h4>
+                            <p>Verified Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instagram Feed -->
+    <section class="instagram-feed">
+        <div class="container">
+            <div class="section-title">
+                <h2>#PinkyCutiesLuxury</h2>
+                <p>Join our community of jewelry lovers and tag us for a chance to be featured</p>
+            </div>
+            
+            <div class="instagram-posts">
+                <div class="instagram-post">
+                    <img src="https://i.pinimg.com/1200x/fa/35/9c/fa359cdc26652328da30fe08e7a6e98f.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-post">
+                    <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/fdbf4f68ea00eb24ee5806257368f7e9~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=871e7462&x-expires=1753207200&x-signature=Ej8dLTOBIwiiONhgFcY74%2BVe%2B18%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                  <div class="instagram-post">
+                    <img src="https://i.pinimg.com/1200x/33/95/36/3395362b9f5310c7dfbc707f6cb04c2b.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                  <div class="instagram-post">
+                    <img src="https://i.pinimg.com/1200x/28/18/00/281800a1d7b8c6e4f20594e9800de0a9.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                  <div class="instagram-post">
+                    <img src="https://i.pinimg.com/736x/f2/42/6d/f2426d5e8b4e23328b3a900efeb33305.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-post">
+                    <img src="https://i.pinimg.com/1200x/68/e1/4c/68e14ce8d6d9a8e1e9938d802cd4394d.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-post">
+                    <img src="https://i.pinimg.com/1200x/d5/7a/52/d57a5249d41d6fcb53617423e8614877.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-post">
+                    <img src="https://i.pinimg.com/1200x/68/46/ad/6846ad2f5bf269f7ca2e60409c9c5f7a.jpg" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Our Atelier</h2>
+                <p>Experience our collections in person at our luxury boutique</p>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256627266!2d-73.98784468459382!3d40.75798597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzI4LjciTiA3M8KwNTknMTAuMiJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="store-info">
+                <div>
+                   <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Luxury+Avenue,+Diamond+District,+New+York,+NY+10001" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">
+                        Zimmerman,Tarnus ya Chini<br>Kiambu,Kenya
+                    </a>
+                </div>
+                <div>
+                    <h3><i class="fas fa-clock-four"></i> Hours</h3>
+                    <p>Monday - Friday: 8am - 5pm<br>Saturday: 10am - 6pm<br>Sunday: Private Appointments Only</p>
+                </div>
+                <div>
+                    <h3><i class="fas fa-phone-alt"></i> Contact</h3>
+                    <span>
+                    <a href="tel: +254-708-853-702" style="color:inherit;text-decoration:underline;">
+                                    +254 720 246 161 -Pinkette<br>
+                                      <a href="tel:+254-708-511-096" style="color:inherit;text-decoration:underline;">
+                                     +254 704 440 164 -Sanin
+                                </a>
+                    </span> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Exclusive Circle</h2>
+            <p>Subscribe for first access to new collections, private sales, and styling consultations</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <small>We respect your privacy. Unsubscribe at any time.</small>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Collections</h3>
+                    <ul>
+                        <li><a href="bracelets.html">Bracelets</a></li>
+                        <li><a href="necklaces.html">Necklaces</a></li>
+                        <li><a href="bangles.html">Bangles</a></li>
+                        <li><a href="waist-beads.html">Waist Beads</a></li>
+                        <li><a href="couple-sets.html">Couple Collections</a></li>
+                        <li><a href="neck-pearls.html">Pearl Series</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="blog.html">The Journal</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">Client Care</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="care-instructions.html">Care Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="shipping-returns.html">Shipping & Returns</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="wholesale.html">Wholesale Inquiries</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
+                        <li><a href="gift-cards.html">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>
+                          <i class="fas fa-map-marker-alt"></i>
+                            <span>
+                       <a href="https://www.google.com/maps/search/?api=1&query=Kirwara+Shopping+Center,+Gatanga+opposite+PCEA,+Muranga,+Kenya" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">
+                                    Visit Us<br>Zimmerman,Tarnus ya Chini<br>kiambu, Kenya
+                                </a>
+                    </p>
+                    <p>
+                       <i class="fas fa-phone-alt"></i>
+                            <span>
+                                <a href="tel: +254-708-853-702" style="color:inherit;text-decoration:underline;">
+                                    +254 720 246 161 -Pinkette<br>
+                                      <a href="tel:+254-708-511-096" style="color:inherit;text-decoration:underline;">
+                                     +254 704 440 164 -Sanin
+                                </a>
+                    </p>
+                    <p>
+                       <i class="fas fa-envelope"></i>
+                            <span>
+                                <a href="mailto:concierge@kuiksounds.com" style="color:inherit;text-decoration:underline;">
+                                    concierge@pinkycuties.com
+                                </a>
+                    </p>
+                    
+                     <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/_pinky.cuties?igsh=MWF4dm9lZHA1ZHExOA==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@pinkycuties4?_t=ZM-8yC4n0mZrjZ&_r=1" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@pinkycuties" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            </div>
+                    
+                       
+                    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pinky Cuties Luxury. All rights reserved. Handcrafted African Bead Jewelry.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
+       </script>
+</body>
+</html>
